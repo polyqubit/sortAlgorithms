@@ -1,4 +1,5 @@
 import pkg.*;
+import java.util.Arrays;
 import java.util.ArrayList;
 
 public class starter implements InputControl, InputKeyControl {
@@ -8,19 +9,20 @@ public class starter implements InputControl, InputKeyControl {
 		KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 		MouseController mC = new MouseController(Canvas.getInstance(),new starter());
 		
-		int flag = 0b0111111111;
-		double[] arr = new double[20];
+		int flag = 0b1111111111;
+		double[] arr = new double[2000];
 		nMath tnum = new nMath(0);
-		System.out.print("[ ");
+		System.out.print("\n\nGenerating random list...\n");
 		for(int i=0;i<arr.length;i++) {
 			arr[i] = tnum.rand(flag,10);
 			Canvas.pause(1);
-			if(i<arr.length-1){System.out.print(", ");}
 		}
-		System.out.println(" ]\n\nBubble Sorted Array:\n");
+		double[] arrr = Arrays.copyOf(arr,2000);
+		System.out.print("Done!\n\n");
+		System.out.println("\n\nBubble Sorted Array:\n");
 		Sorts.bubbleD(1,arr,0);
-		System.out.println("");
-		Sorts.combD(1,arr,0);
+		System.out.println("\n\nComb Sorted Array:\n");
+		Sorts.combD(1,arrr,0);
 	}
 
 	public void onMouseClick(double x, double y) {
