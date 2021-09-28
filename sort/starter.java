@@ -9,20 +9,25 @@ public class starter implements InputControl, InputKeyControl {
 		KeyController kC = new KeyController(Canvas.getInstance(),new starter());
 		MouseController mC = new MouseController(Canvas.getInstance(),new starter());
 		
+		int c = 1;
 		int flag = 0b1111111111;
-		double[] arr = new double[2000];
+		Rectangle line;
+		double[] arr = new double[1000];
 		nMath tnum = new nMath(0);
 		System.out.print("\n\nGenerating random list...\n");
 		for(int i=0;i<arr.length;i++) {
-			arr[i] = tnum.rand(flag,10);
+			arr[i] = tnum.rand(flag,100,c);
+			line = new Rectangle(i*0.75,20,0.1,arr[i]);
+			line.draw();
 			Canvas.pause(1);
+			c += System.currentTimeMillis();
 		}
-		double[] arrr = Arrays.copyOf(arr,2000);
+		double[] arrr = Arrays.copyOf(arr,1000);
 		System.out.print("Done!\n\n");
 		System.out.println("\n\nBubble Sorted Array:\n");
-		Sorts.bubbleD(1,arr,0);
+		Sorts.bubbleD(1,arr,0,120);
 		System.out.println("\n\nComb Sorted Array:\n");
-		Sorts.combD(1,arrr,0);
+		Sorts.combD(1,arrr,0,220);
 	}
 
 	public void onMouseClick(double x, double y) {

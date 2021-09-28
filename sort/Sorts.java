@@ -1,3 +1,4 @@
+import pkg.*;
 public final class Sorts {
 	private double x;
 	private Sorts(double inp) {
@@ -6,11 +7,12 @@ public final class Sorts {
 	
 	//bubble sort
 	//hand: 0 = lowest on left, 1 = highest on left
-	public static void bubbleD(int flag, double[] inp, int hand) {
+	public static void bubbleD(int flag, double[] inp, int hand, int y) {
 		boolean swap = true;
 		int round = 0;
 		double reg;
 		int c=0;
+		Rectangle line;
 		if(hand==0 || hand!=1) {
 			while(swap){
 				swap = false;
@@ -45,6 +47,8 @@ public final class Sorts {
 			System.out.print("[ ");
 			for(int i=0;i<inp.length;i++) {
 				System.out.print(inp[i]);
+				line = new Rectangle(i*0.75,y,0.1,inp[i]);
+				line.draw();
 				if(i<inp.length-1){System.out.print(", ");}
 			}
 			System.out.println(" ]");
@@ -53,11 +57,12 @@ public final class Sorts {
 	}
 	
 	//comb sort
-	public static void combD(int flag, double[] inp, int hand) {
+	public static void combD(int flag, double[] inp, int hand, int y) {
 		int gap = inp.length;
 		boolean swap = true;
 		double reg;
 		int c=0;
+		Rectangle line;
 		if(hand==0 || hand!=1) {
 			while(swap){
 				swap = false;
@@ -96,6 +101,8 @@ public final class Sorts {
 			System.out.print("[ ");
 			for(int i=0;i<inp.length;i++) {
 				System.out.print(inp[i]);
+				line = new Rectangle(i*0.75,y,0.1,inp[i]);
+				line.draw();
 				if(i<inp.length-1){System.out.print(", ");}
 			}
 			System.out.println(" ]");
@@ -103,5 +110,12 @@ public final class Sorts {
 		}
 	}
 	
-	//merge sort
+	//merge arrays
+	public static void merge(int flag, double[] inp, int hand, int y) {
+		
+	}
+	
+	public static void mergeSrt(double[] inp, int left, int right) {
+		
+	}
 }

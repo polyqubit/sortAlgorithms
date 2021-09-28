@@ -94,9 +94,9 @@ public class Maths {
 	}
 	
 	//random command, takes an integer upper bound
-	double rand(int limit) {
+	double rand(int limit,int c) {
 		if(limit>100000000) {limit=100000000;}
-		double tiom = System.currentTimeMillis()*System.currentTimeMillis()*30109.14159265358979;
+		double tiom = System.currentTimeMillis()*System.currentTimeMillis()*389109.14159265358979*c;
 		int[] list = new int[limit+1];
 		for(int i=0;i<list.length;i++){
 			list[i]=i;
@@ -175,8 +175,8 @@ class nMath extends Maths {
 		return(x);
 	}
 
-	public double rand(int flag, int limit) {
-		double x = super.rand(limit);
+	public double rand(int flag, int limit, int c) {
+		double x = super.rand(limit,c);
 		if((flag & 0b1000000000) !=512) {System.out.print(x);};
 		return(x);
 	}
