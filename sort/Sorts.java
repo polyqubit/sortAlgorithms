@@ -53,7 +53,7 @@ public final class Sorts {
 				if(i<inp.length-1){System.out.print(", ");}
 			}
 			System.out.println(" ]");
-			System.out.println("Comparisons:"+c);
+			System.out.println("Comparisons: "+c);
 		}
 	}
 	
@@ -107,7 +107,7 @@ public final class Sorts {
 				if(i<inp.length-1){System.out.print(", ");}
 			}
 			System.out.println(" ]");
-			System.out.println("Comparisons:"+c);
+			System.out.println("Comparisons: "+c);
 		}
 	}
 	
@@ -169,6 +169,6 @@ public final class Sorts {
 			if(i<inp.length-1){System.out.print(", ");}
 		}
 		System.out.println(" ]");
-		System.out.println("Comparisons:"+c);
+		System.out.println("Comparisons: "+c);
 	}
 }

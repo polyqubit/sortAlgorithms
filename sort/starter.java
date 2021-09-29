@@ -11,12 +11,13 @@ public class starter implements InputControl, InputKeyControl {
 		
 		int c = 1;
 		int flag = 0b1111111111;
+		int randn = 50;
 		Rectangle line;
-		double[] arr = new double[1000];
+		double[] arr = new double[2048];
 		nMath tnum = new nMath(0);
 		System.out.print("\n\nGenerating random list...\n");
 		for(int i=0;i<arr.length;i++) {
-			arr[i] = tnum.rand(flag,100,c);
+			arr[i] = tnum.rand(flag,randn,c);
 			line = new Rectangle(i*0.75,20,0.1,arr[i]);
 			line.draw();
 			Canvas.pause(1);
@@ -26,11 +27,11 @@ public class starter implements InputControl, InputKeyControl {
 		double[] arrrr = Arrays.copyOf(arr,arr.length);
 		System.out.print("Done!\n\n");
 		System.out.println("\n\nBubble Sorted Array:\n");
-		Sorts.bubbleD(1,arr,0,120);
+		Sorts.bubbleD(1,arr,0,randn+30);
 		System.out.println("\n\nComb Sorted Array:\n");
-		Sorts.combD(1,arrr,0,220);
+		Sorts.combD(1,arrr,0,2*randn+40);
 		System.out.println("\n\nMerge Sorted Array:\n");
-		Sorts.arrayprint(arrrr,320,Sorts.mergeSort(arrrr,0,arrrr.length-1));
+		Sorts.arrayprint(arrrr,3*randn+50,Sorts.mergeSort(arrrr,0,arrrr.length-1));
 	}
 
 	public void onMouseClick(double x, double y) {
