@@ -22,12 +22,15 @@ public class starter implements InputControl, InputKeyControl {
 			Canvas.pause(1);
 			c += System.currentTimeMillis();
 		}
-		double[] arrr = Arrays.copyOf(arr,1000);
+		double[] arrr = Arrays.copyOf(arr,arr.length);
+		double[] arrrr = Arrays.copyOf(arr,arr.length);
 		System.out.print("Done!\n\n");
 		System.out.println("\n\nBubble Sorted Array:\n");
 		Sorts.bubbleD(1,arr,0,120);
 		System.out.println("\n\nComb Sorted Array:\n");
 		Sorts.combD(1,arrr,0,220);
+		System.out.println("\n\nMerge Sorted Array:\n");
+		Sorts.arrayprint(arrrr,320,Sorts.mergeSort(arrrr,0,arrrr.length-1));
 	}
 
 	public void onMouseClick(double x, double y) {
