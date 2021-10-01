@@ -159,6 +159,7 @@ public final class Sorts {
 		return cou;
 	}
 	
+	//print array because merge implementation does not allow for including toString within method
 	public static void arrayprint(double[] inp, int y, int c) {
 		Rectangle line;
 		System.out.print("[ ");
@@ -170,5 +171,37 @@ public final class Sorts {
 		}
 		System.out.println(" ]");
 		System.out.println("Comparisons: "+c);
+	}
+	
+	//selection sort
+	public static void selectSort(int flag, double[] inp, int y) {
+		Rectangle line;
+		int c = 0;
+		for(int i=0;i<inp.length;i++) {
+			int minInd = i;
+			for(int j=i+1;j<inp.length;j++) {
+				if(inp[j]<inp[minInd]) {
+					minInd = j;
+				}
+				c++;
+			}
+			if(i!=minInd) {
+				double tempStorage = inp[i];
+				inp[i] = inp[minInd];
+				inp[minInd] = tempStorage;
+			}
+			c++;
+		}
+		if(flag == 1) {
+			System.out.print("[ ");
+			for(int i=0;i<inp.length;i++) {
+				System.out.print(inp[i]);
+				line = new Rectangle(i*0.75,y,0.1,inp[i]);
+				line.draw();
+				if(i<inp.length-1){System.out.print(", ");}
+			}
+			System.out.println(" ]");
+			System.out.println("Comparisons: "+c);
+		}
 	}
 }

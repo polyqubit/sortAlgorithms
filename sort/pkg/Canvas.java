@@ -72,7 +72,7 @@ public class Canvas
             }
 			// changed by Neato to make Canvas the same size (600 x 600)
 			// changed by Micah to make Canvas larger because I don't agree with the size
-			return new Dimension(1700,600);
+			return new Dimension(1000,600);
             //return new Dimension(maxx + MARGIN, maxy + MARGIN);
         }
     }
